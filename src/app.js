@@ -6,20 +6,23 @@ const morgan = require("morgan");
 const express = require("express");
 const session = require("express-session");
 
+const root = path.join(__dirname, "..", "src", "build");
 
+console.log(root)
 exports.ExpressInstance = async () => {
   const app = express();
 
   try {
 
-    // app.use(express.static(path.join(__dirname, "build")));
+    app.use(express.static(root));
     app.use(cors());
     app.use(morgan("combined"));
     app.use(express.json());
 
     app.get("/", (_req, res) => {
-      res.send("hello")
+      res.sendFile(root, "index.html");
     })
+
     return app;
   } catch (e) {
     console.error(e);

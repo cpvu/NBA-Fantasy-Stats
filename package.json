@@ -4,6 +4,9 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "compile": "cd ./client && npm run build && cd .. && npm run clean && npm run move",
+    "clean": "rm -rf ./src/build",
+    "move": "mv ./client/build ./src/",
     "start": "node src/index.js",
     "test": "mocha"
   },
