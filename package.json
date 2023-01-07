@@ -29,7 +29,12 @@
     "@chakra-ui/react": "^2.4.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "cors": "^2.8.5",
     "create-react-app": "^5.0.1",
-    "framer-motion": "^8.2.4"
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "framer-motion": "^8.2.4",
+    "helmet": "^6.0.1",
+    "morgan": "^1.10.0"
   }
 }
