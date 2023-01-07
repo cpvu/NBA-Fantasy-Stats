@@ -5,6 +5,8 @@ import { Component } from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
 import { theme } from "./containers/theme" 
+import CallToActionWithAnnotation from './components/Hero';
+import Success from './components/results'
 
 
 function MyButton() {
@@ -26,12 +28,10 @@ function Example() {
 function App() {
   return (
     <ChakraProvider colorMode="dark" theme={theme}>
-    
-    <Stack direction={['column', 'row']} spacing = "100px;">
-      <Example ></Example>
-      <MyButton></MyButton>
-      <MyButton ml= "500px"></MyButton>
-    </Stack>
+      <CallToActionWithAnnotation width="100%"></CallToActionWithAnnotation>
+      <Success></Success>
+      <Stack direction={['column', 'row']} spacing = "100px;">
+      </Stack>
   
       
     </ChakraProvider>
