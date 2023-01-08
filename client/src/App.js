@@ -9,7 +9,7 @@ import CallToActionWithAnnotation from './components/Hero';
 import FilterMenu from './components/filters'
 import PlayerTable from './components/table'
 import PositionCheckBox from './components/checkbox';
-
+import SubmitButton from './components/submitButton';
 
 function MyButton() {
   const theme = useTheme()
@@ -37,7 +37,8 @@ function App() {
        border='1px' borderColor='gray.200'
        bg='gray.50' 
       >
-      <PositionCheckBox></PositionCheckBox>
+        <PositionCheckBox></PositionCheckBox>
+        <SubmitButton></SubmitButton>
       </Container>
       <Container
           maxW='6xl'
