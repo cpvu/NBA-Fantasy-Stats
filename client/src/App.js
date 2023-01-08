@@ -5,11 +5,8 @@ import { Component } from 'react';
 import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
 import { theme } from "./containers/theme" 
-import CallToActionWithAnnotation from './components/Hero';
-import FilterMenu from './components/filters'
-import PlayerTable from './components/table'
-import PositionCheckBox from './components/checkbox';
-import SubmitButton from './components/submitButton';
+import {CallToActionWithAnnotation, FilterMenu, PlayerTable, PositionCheckBox, SubmitButton } from "./components"
+
 
 function MyButton() {
   const theme = useTheme()
