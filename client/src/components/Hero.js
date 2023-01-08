@@ -10,65 +10,35 @@ import {
   createIcon,
 } from '@chakra-ui/react';
 
+import PageDivider from './divider';
+
 export default function CallToActionWithAnnotation() {
   return (
     <>
-
         <Stack
-          as={Box}
           textAlign={'center'}
-          spacing={{ base: 8, md: 14 }}
-          py={{ base: 20, md: 36 }}>
+          spacing={{ base: 8, md: 5 }}
+          py={{ base: 100, md: 6 }}>
           <Heading
             fontWeight={600}
-            fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+            fontSize={{ base: '1xl', sm: '2xl', md: '4xl' }}
             lineHeight={'110%'}>
-            Truck Type Comparisons <br />
-            <Text as={'span'} color={'green.400'} fontSize={{ base: '2xl', sm: '3xl', md: '3xl' }}>
+            PBCC NBA Basketball Fantasy Tracker<br />
+            <Text as={'span'} color={'green.400'} fontSize={{ base: '2xl', sm: '1xl', md: '1xl' }}>
               Calculated through instanteous fuel consumption, distance and phases
             </Text>
-          </Heading>
-          <Text color={'gray.500'}>
+
+            <Text color={'gray.500'} fontSize={"20px"}>
             Our goal is to allow you to determine the truck type that provides specific boosts in efficiency of delivering and further fulfills our goal of sustainability.
           </Text>
+          <PageDivider></PageDivider>
+          </Heading>
           <Stack
             direction={'column'}
             spacing={3}
             align={'center'}
             alignSelf={'center'}
             position={'relative'}>
-            <Button
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Compare
-            </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              Learn more
-            </Button>
-            <Box>
-              <Icon
-                as={Arrow}
-                color={useColorModeValue('gray.800', 'gray.300')}
-                w={71}
-                position={'absolute'}
-                right={-71}
-                top={'10px'}
-              />
-              <Text
-                fontSize={'lg'}
-                fontFamily={'Caveat'}
-                position={'absolute'}
-                right={'-125px'}
-                top={'-15px'}
-                transform={'rotate(10deg)'}>
-                Starting at $15/mo
-              </Text>
-            </Box>
           </Stack>
         </Stack>
 
