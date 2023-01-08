@@ -3,7 +3,7 @@ import { Container, Center, Button, Stack, Grid, GridItem} from '@chakra-ui/reac
 import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
 import {stats, positions } from "./containers/constants"
-import {CallToActionWithAnnotation, PlayerTable, PositionCheckBox, SubmitButton, TeamDropdown } from "./components"
+import {MainPageHeader, CallToActionWithAnnotation, PlayerTable, PositionCheckBox, SubmitButton, TeamDropdown, WithSubnavigation } from "./components"
 
 
 function MyButton() {
@@ -25,6 +25,8 @@ function Example() {
 function App() {
   return (
     <ChakraProvider>
+      <WithSubnavigation></WithSubnavigation>
+      <MainPageHeader title="PBCC NBA Basketball Fantasy Tracker"></MainPageHeader>
       <CallToActionWithAnnotation width="100%"></CallToActionWithAnnotation>
       <Container
           maxW={{base: "60%", md: "90%", }}
