@@ -1,4 +1,5 @@
 require('dotenv').config();
+const { useQuery } = require('@chakra-ui/react');
 const mysql = require('mysql');
 const crypto = require('node:crypto');
 
@@ -33,6 +34,13 @@ class MySql {
       method: query
     })
   }
+
+  useQuery(queryMethod) {
+    this.sql.query(queryMethod, (err, results, fields) => {
+      if (err) throw err;
+      console.log(results);
+    })
+  }
 }
 
 (async () => {
@@ -45,8 +53,11 @@ class MySql {
   })
 
   await sql.connect();
-  sql.addToQuery("hello")
-  console.log(sql.queries)
+  sql.useQuery(`
+    select *
+    from players_total_game_stats
+    where Pos = "PG/SG";
+  `);
   sql.end()
 
 })();
