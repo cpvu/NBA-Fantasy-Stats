@@ -8,7 +8,9 @@ const session = require("express-session");
 
 const root = path.join(__dirname, "..", "src", "build");
 
-console.log(root)
+
+const { homeRouter } = require("./routes");
+
 exports.ExpressInstance = async () => {
   const app = express();
 
@@ -19,9 +21,7 @@ exports.ExpressInstance = async () => {
     app.use(morgan("combined"));
     app.use(express.json());
 
-    app.get("/", (_req, res) => {
-      res.sendFile(root, "index.html");
-    })
+    app.use("/", homeRouter());
 
     return app;
   } catch (e) {
