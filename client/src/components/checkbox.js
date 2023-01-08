@@ -1,4 +1,4 @@
-import { Checkbox, CheckboxGroup,  useTheme, Text, Container, VStack, StackDivider, Grid, GridItem } from '@chakra-ui/react'
+import { Checkbox, CheckboxGroup, useTheme, Text, Container, VStack, StackDivider, Grid, GridItem } from '@chakra-ui/react'
 
 export default function PositionCheckBox(props) {
     const theme = useTheme()
@@ -10,11 +10,11 @@ export default function PositionCheckBox(props) {
                 <Text mb="0" mt="3">{props.title}</Text>
                 <CheckboxGroup colorScheme='orange' defaultValue={[]}>
                     <Grid templateColumns='repeat(5, 1fr)' gap={3}>
-                    {playerPositions?.map((x, i) => {
+                        {playerPositions?.map((x, i) => {
                             return <GridItem><Checkbox key={i} value={x[i]}>{x}</Checkbox></GridItem>
 
                         })}
-          </Grid>
+                    </Grid>
                 </CheckboxGroup>
             </VStack>
         </Container>
