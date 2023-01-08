@@ -6,10 +6,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
 import { theme } from "./containers/theme" 
 import CallToActionWithAnnotation from './components/Hero';
-import Success from './components/results'
 import FilterMenu from './components/filters'
 import PlayerTable from './components/table'
-import PageDivider from './components/divider'
+import PositionCheckBox from './components/checkbox';
 
 
 function MyButton() {
@@ -32,15 +31,13 @@ function App() {
   return (
     <ChakraProvider colorMode="dark" theme={theme}>
       <CallToActionWithAnnotation width="100%"></CallToActionWithAnnotation>
-
       <Container
        maxW='6xl'
        rounded='lg'
        border='1px' borderColor='gray.200'
-       bg='gray.50'
-       
+       bg='gray.50' 
       >
-      <FilterMenu></FilterMenu>
+      <PositionCheckBox></PositionCheckBox>
       </Container>
       <Container
           maxW='6xl'
