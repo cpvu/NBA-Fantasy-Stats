@@ -1,11 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import { Box, Container, Image, Center, Button, Flex, Stack, HStack, VStack, Grid, GridItem, Text} from '@chakra-ui/react'
-import { Component } from 'react';
+import { Container, Center, Button, Stack, Grid, GridItem} from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
 import {stats, positions } from "./containers/constants"
-import {CallToActionWithAnnotation, FilterMenu, PlayerTable, PositionCheckBox, SubmitButton, TeamDropdown } from "./components"
+import {CallToActionWithAnnotation, PlayerTable, PositionCheckBox, SubmitButton, TeamDropdown } from "./components"
 
 
 function MyButton() {
@@ -41,21 +39,7 @@ function App() {
             <GridItem><TeamDropdown></TeamDropdown></GridItem>
           </Grid>
       </Container>
-      <Center>
-        <SubmitButton></SubmitButton>
-      </Center>
-      
-      <Container
-          maxW='6xl'
-          rounded='lg'
-          border='1px' borderColor='gray.200'
-          bg='gray.50'
-          my={{ base: 10, md: 10}}>
-        <PlayerTable></PlayerTable>
-      </Container>
-
-      <Stack direction={['column', 'row']} spacing = "100px;">
-      </Stack>
+      <SubmitButton></SubmitButton>
     </ChakraProvider>
   )
 }
