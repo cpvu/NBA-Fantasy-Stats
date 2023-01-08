@@ -4,12 +4,10 @@ const path = require("path");
 const cors = require("cors");
 const morgan = require("morgan");
 const express = require("express");
-const session = require("express-session");
 
 const root = path.join(__dirname, "..", "src", "build");
 
-
-const { homeRouter } = require("./routes");
+const { homeRouter, apiRouter } = require("./routes");
 
 exports.ExpressInstance = async () => {
   const app = express();
@@ -22,6 +20,7 @@ exports.ExpressInstance = async () => {
     app.use(express.json());
 
     app.use("/", homeRouter());
+    app.use("/api", apiRouter());
 
     return app;
   } catch (e) {
