@@ -9,16 +9,7 @@ export default function CallToActionWithAnnotation() {
                 textAlign={'center'}
                 spacing={{ base: 8, md: 5 }}
                 py={{ base: 100, md: 6 }}>
-                <Heading
-                    fontFamily={"Roboto"}
-                    letterSpacing={1.5}
-                    fontWeight={600}
-                    fontSize={{ base: '2xl', sm: '4xl', md: '5xl' }}
-                    lineHeight={'110%'}>
-                    PBCC NBA Basketball Fantasy Tracker<br />
-
-                    <PageDivider></PageDivider>
-                </Heading>
+               
                 <Text as={'span'} color={'orange.400'} fontSize={{ base: '2xl', sm: '1xl', md: '1xl' }} fontFamily={"Roboto"} >
                     A statistical comparison of fantasy NBA players
                 </Text>
