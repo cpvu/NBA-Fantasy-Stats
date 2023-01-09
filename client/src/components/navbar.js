@@ -101,7 +101,7 @@ import {
   };
 
   const DesktopNav = () => {
-    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkColor = useColorModeValue('black', 'gray.200');
     const linkHoverColor = useColorModeValue('gray.800', 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
@@ -114,7 +114,7 @@ import {
                 <Link
                   p={2}
                   href={navItem.href ?? '#'}
-                  fontSize={'sm'}
+                  fontSize={'md'}
                   fontWeight={500}
                   color={linkColor}
                   _hover={{
@@ -154,7 +154,7 @@ import {
     return (
       <Box>
         <Flex
-          bg={useColorModeValue('white', 'gray.800')}
+          bg={useColorModeValue('#ff9248', 'orange.400')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
@@ -193,13 +193,17 @@ import {
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
-            spacing={6}>
-            <Button
-              as={'a'}
+            spacing={5}>
+             <Button
+              display={{ base: 'none', md: 'inline-flex' }}
               fontSize={'sm'}
-              fontWeight={400}
-              variant={'link'}
-              href={'#'}>
+              fontWeight={600}
+              color={'white'}
+              bg={'gray.400'}
+              href={'#'}
+              _hover={{
+                bg: 'gray.300',
+              }}>
               Sign In
             </Button>
             <Button
@@ -207,10 +211,10 @@ import {
               fontSize={'sm'}
               fontWeight={600}
               color={'white'}
-              bg={'orange.500'}
+              bg={'gray.400'}
               href={'#'}
               _hover={{
-                bg: 'pink.300',
+                bg: 'gray.300',
               }}>
               Sign Up
             </Button>
