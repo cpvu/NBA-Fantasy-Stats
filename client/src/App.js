@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
 import {stats, positions } from "./containers/constants"
 import {MainPageHeader, CallToActionWithAnnotation, PlayerTable, PositionCheckBox, SubmitButton, TeamDropdown, WithSubnavigation } from "./components"
-
+import { extendTheme } from '@chakra-ui/react';
 
 function MyButton() {
   const theme = useTheme()
@@ -22,9 +22,26 @@ function Example() {
   )
 }
 
+const theme = extendTheme({
+  components: {
+    Checkbox: {
+      baseStyle: {
+        control: {
+          bg: "white",
+          borderRadius: 9,
+          borderColor: "gray",
+          border: "1px",
+          _checked: {
+          }
+        }
+      }
+    },
+  }
+});
+
 function App() {
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <WithSubnavigation></WithSubnavigation>
       <MainPageHeader title="PBCC NBA Basketball Fantasy Tracker"></MainPageHeader>
       <CallToActionWithAnnotation width="100%"></CallToActionWithAnnotation>
@@ -32,7 +49,7 @@ function App() {
           maxW={{base: "60%", md: "90%", }}
           rounded='lg'
           border='1px' borderColor='gray.300'
-          bg="gray.50"
+          bg="gray.200"
           pb="19"
           >
           <Grid templateColumns='repeat(3, 1fr)' gap={5}>
