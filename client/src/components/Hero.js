@@ -8,7 +8,7 @@ export default function CallToActionWithAnnotation() {
             <Stack
                 textAlign={'center'}
                 spacing={{ base: 8, md: 5 }}
-                py={{ base: 100, md: 6 }}>
+                py={{ base: 100, md: 2 }}>
                
                 <Text as={'span'} color={'orange.400'} fontSize={{ base: '2xl', sm: '1xl', md: '1xl' }} fontFamily={"Roboto"} >
                     A statistical comparison of fantasy NBA players
