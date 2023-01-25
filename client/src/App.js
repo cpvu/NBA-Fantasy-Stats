@@ -31,10 +31,9 @@ const theme = extendTheme({
   }
 });
 
-
-
 function App() {
-  const [checkedItems, setCheckedItems] = React.useState([]);
+  const [playerPositions, setPlayerPositions] = React.useState([]);
+  const [playerStats, setPlayerStats] = React.useState([]);
 
   return (
     <ChakraProvider theme={theme}>
@@ -49,12 +48,12 @@ function App() {
           pb="19"
           >
           <Grid templateColumns='repeat(3, 1fr)' gap={5}>
-            <GridItem><PositionCheckBox checkedItems = {checkedItems} setCheckedItems = {setCheckedItems} title="Position" checkboxValue={positions}></PositionCheckBox></GridItem>
-            <GridItem><PositionCheckBox checkedItems = {checkedItems} setCheckedItems = {setCheckedItems} title="Stats" checkboxValue={stats}></PositionCheckBox></GridItem>
+            <GridItem><PositionCheckBox checkedItems = {playerPositions} setCheckedItems = {setPlayerPositions} title="Position" checkboxValue={positions}></PositionCheckBox></GridItem>
+            <GridItem><PositionCheckBox checkedItems = {playerStats} setCheckedItems = {setPlayerStats} title="Stats" checkboxValue={stats}></PositionCheckBox></GridItem>
             <GridItem><TeamDropdown></TeamDropdown></GridItem>
           </Grid>
       </Container>
-      <SubmitButton checkedItems = {checkedItems}></SubmitButton>
+      <SubmitButton playerStats = {playerStats} playerPositions = {playerPositions}></SubmitButton>
     </ChakraProvider>
   )
 }
