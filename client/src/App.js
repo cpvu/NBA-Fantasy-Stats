@@ -1,4 +1,5 @@
 import './App.css';
+import React from "react";
 import { Container, Center, Button, Stack, Grid, GridItem} from '@chakra-ui/react'
 import { ChakraProvider } from '@chakra-ui/react'
 import { useTheme, useColorMode } from '@chakra-ui/react'
@@ -6,26 +7,17 @@ import {stats, positions } from "./containers/constants"
 import {MainPageHeader, CallToActionWithAnnotation, PlayerTable, PositionCheckBox, SubmitButton, TeamDropdown, WithSubnavigation } from "./components"
 import { extendTheme } from '@chakra-ui/react';
 
-function MyButton() {
-  const theme = useTheme()
-  return <button style={{ backgroundColor: theme.colors.discord }}>Click me!</button>
-}
-
-function Example() {
-  const { colorMode, toggleColorMode } = useColorMode()
-  return (
-    <header>
-      <Button onClick={toggleColorMode}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button>
-    </header>
-  )
-}
 
 const theme = extendTheme({
   components: {
     Checkbox: {
       baseStyle: {
+        container: {
+          touchAction: 'none',
+        },
+        label: {
+          pointerEvents: "none",
+        },
         control: {
           bg: "white",
           borderRadius: 9,
@@ -39,7 +31,11 @@ const theme = extendTheme({
   }
 });
 
+
+
 function App() {
+  const [checkedItems, setCheckedItems] = React.useState([]);
+
   return (
     <ChakraProvider theme={theme}>
       <WithSubnavigation></WithSubnavigation>
@@ -53,12 +49,12 @@ function App() {
           pb="19"
           >
           <Grid templateColumns='repeat(3, 1fr)' gap={5}>
-            <GridItem><PositionCheckBox title="Position" checkboxValue={positions}></PositionCheckBox></GridItem>
-            <GridItem><PositionCheckBox title="Stats" checkboxValue={stats}></PositionCheckBox></GridItem>
+            <GridItem><PositionCheckBox checkedItems = {checkedItems} setCheckedItems = {setCheckedItems} title="Position" checkboxValue={positions}></PositionCheckBox></GridItem>
+            <GridItem><PositionCheckBox checkedItems = {checkedItems} setCheckedItems = {setCheckedItems} title="Stats" checkboxValue={stats}></PositionCheckBox></GridItem>
             <GridItem><TeamDropdown></TeamDropdown></GridItem>
           </Grid>
       </Container>
-      <SubmitButton></SubmitButton>
+      <SubmitButton checkedItems = {checkedItems}></SubmitButton>
     </ChakraProvider>
   )
 }
