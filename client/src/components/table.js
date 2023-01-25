@@ -10,48 +10,38 @@ import {
     TableContainer,
 } from '@chakra-ui/react'
 
-export default function PlayerTable() {
+import './styles.css'
+
+export default function PlayerTable(props) {
+
+    const playerInformation = props.playerInfo
+    console.log(playerInformation)
+    const stats = ['Pos', 'Points', 'Rebound', 'Assist', 'Steal', 'Threes', 'to']
 
     return (
-
-        <TableContainer pt="25px" pb="15px" w="100%">
-            <Table variant='simple' size="lg">
+        <TableContainer pt="25px" pb="15px" w="65vw" >
+            <Table variant='simple' size="lg" alignItems={'center'}>
                 <TableCaption mt="10">NBA 2022-2023 Season</TableCaption>
                 <Thead>
                     <Tr>
-                        <Th>Player</Th>
-                        <Th>Games Played</Th>
-                        <Th>Mins</Th>
-                        <Th>Points</Th>
-                        <Th >FG %</Th>
-                        <Th>FT %</Th>
-                        <Th>FTA %</Th>
-                        <Th>3PM</Th>
-                        <Th>3PMA</Th>
-                        <Th>Rebounds</Th>
-                        <Th >Assists</Th>
-                        <Th >Turn Overs</Th>
+                        <Th textAlign={'center'}>Player</Th>
+                        {stats.map(stat => {
+                            return(
+                                <Th textAlign={'center'}>{stat}</Th>
+                            )
+                        })}
                     </Tr>
                 </Thead>
-                <Tbody>
-                    <Tr>
-                        <Td>inches</Td>
-                        <Td>millimetres (mm)</Td>
-                        <Td>25.4</Td>
-                        <Td>25.4</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>feet</Td>
-                        <Td>centimetres (cm)</Td>
-                        <Td >30.48</Td>
-                        <Td >25.4</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>yards</Td>
-                        <Td>metres (m)</Td>
-                        <Td >0.91444</Td>
-                        <Td>25.4</Td>
-                    </Tr>
+                <Tbody textAlign={'center'}>
+                    {playerInformation.map(x => {
+                        return (
+                            <tr>
+                                <td>{x.Name}</td>
+                                {stats.map(stat => (
+                                    <td>{x[stat]}</td>
+                                ))}
+                            </tr>)
+                    })}
                 </Tbody>
                 <Tfoot>
                     <Tr>
