@@ -18,7 +18,13 @@ exports.getPlayerStats = (req, res) => {
       }
   })
 
-  console.log(newPlayerObject)
+  newPlayerObject.map(x => {
+   //
+  })
+
+
+
+  
 
   res.send(newPlayerObject);
 }
